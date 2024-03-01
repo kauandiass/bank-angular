@@ -1,0 +1,5 @@
+<div class="input-box">
+    <!--<h1 [ngClass]="{'text': true, '{textAnimClass}': isInputFocused}" for="">{{ referenceText }}</h1>-->
+    <h1 [class]="'text ' + textAnimClass" for="">{{ referenceText }}</h1>
+    <input class="input" [type]="inputType" (focus)="onInputFocus()" (blur)="onInputBlur()" [(ngModel)]="inputValue">
+</div>
