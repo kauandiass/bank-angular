@@ -1,6 +1,18 @@
 <main class="register-main">
-    <app-input referenceText="User" inputType="text"></app-input>
 
-    <app-input referenceText="Password" inputType="password"></app-input>
+    <app-reference-panel referenceText="Register"></app-reference-panel>
 
+    <form [formGroup]="registerForm">
+        
+        <app-input class="username" referenceText="Username" visibilityButton="text" inputType="text" formControlName="username"></app-input>
+
+        <app-input class="password" referenceText="Password" visibilityButton="password" inputType="password" formControlName="password"></app-input>
+
+        <app-button referenceText="Register" [disabled]="!registerForm.valid" (submit)="onSubmit()" [loading]="loading()"></app-button>
+
+        <app-small-nav-page pageHref="account/login" referenceLabel="Have an account?" referenceText="Login"></app-small-nav-page>
+
+    </form>
+
+    
 </main>

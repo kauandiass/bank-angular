@@ -1,5 +1,15 @@
+
 <div class="input-box">
     <!--<h1 [ngClass]="{'text': true, '{textAnimClass}': isInputFocused}" for="">{{ referenceText }}</h1>-->
     <h1 [class]="'text ' + textAnimClass" for="">{{ referenceText }}</h1>
-    <input class="input" [type]="inputType" (focus)="onInputFocus()" (blur)="onInputBlur()" [(ngModel)]="inputValue">
+    
+    <input class="input" (input)="onInput($event)" [type]="inputType" (focus)="onInputFocus()" (blur)="onInputBlur()" [(ngModel)]="inputValue">
+
+    @if ( visibilityButton === "password" ) {
+        <div [style.color]="'red'" class="password-visibility" (click)="ChangeVisibility()">
+            <!-- <i class="fa-solid fa-eye"></i> -->
+            <i [class]="eyeIconClass"></i>
+        </div>
+    }
+
 </div>

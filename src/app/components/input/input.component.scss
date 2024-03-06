@@ -1,6 +1,9 @@
+@import "../../../color-variables.scss";
+
 .input-box {
     // background: red;
-    width: 350px;
+    width: 100%;
+    max-width: 290px;
     height: 70px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -11,7 +14,7 @@
     .text {
         pointer-events: none;
         position: absolute;
-        background: #15161E;
+        background: $bg-primary;
         color: white;
         width: auto;
         height: 20px;
@@ -26,11 +29,12 @@
     .input {
         background: transparent;
         color: white;
-        width: 350px;
+        width: 100%;
+        max-width: 290px;
         height: 50px;
         margin-top: 10px;
         border: none;
-        border: 3px solid #2A2C3A;
+        border: 3px solid $color-primary;
         border-radius: 6px;
         font-family: "Inter", sans-serif;
         font-size: 16px;
@@ -40,6 +44,26 @@
 
     .input:focus {
         outline: none;
+    }
+
+    .password-visibility {
+        cursor: pointer;
+        position: absolute;
+        //background: $color-tertiary;
+        background: linear-gradient(140deg, $color-secondary, $color-tertiary);
+        width: 30px;
+        height: 25px;
+        margin-left: 290px;
+        border-radius: 20px;
+        font-size: 14px;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.331);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    i {
+        color: $bg-primary;
     }
 }
 

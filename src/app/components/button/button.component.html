@@ -1,0 +1,9 @@
+<div class="button-box">
+    <button class="button" (click)="submit()" [disabled]="disabled">
+        @if( !loading ) {
+            {{ referenceText }}
+        } @else {
+            Carregando...
+        }
+    </button>
+</div>

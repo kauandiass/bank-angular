@@ -1,0 +1,16 @@
+<main class="login-main">
+
+    <app-reference-panel referenceText="Login"></app-reference-panel>
+
+    <form [formGroup]="loginForm">
+
+        <app-input class="username" referenceText="Username" visibilityButton="text" inputType="text" formControlName="username"></app-input>
+
+        <app-input class="password" referenceText="Password" visibilityButton="password" inputType="password" formControlName="password"></app-input>
+
+        <app-button referenceText="Login" [disabled]="!loginForm.valid" (submit)="onSubmit()" [loading]="loading()"></app-button>
+        
+        <app-small-nav-page pageHref="/" referenceLabel="Don't have an account?" referenceText="Register"></app-small-nav-page>
+
+    </form>
+</main>

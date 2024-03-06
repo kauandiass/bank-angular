@@ -1,0 +1,33 @@
+@import "../../../color-variables.scss";
+
+.button-box {
+    background: transparent;
+    width: 290px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button {
+    cursor: pointer;
+    // background: $color-primary;
+    background: linear-gradient(140deg, darken($color-secondary, 10%), darken($color-tertiary, 10%));
+    color: $bg-primary;
+    width: 290px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.button:disabled {
+    cursor:unset;
+    background: linear-gradient(140deg, darken($color-secondary, 18%), darken($color-tertiary, 30%));
+    color: $bg-primary;
+}
+
+.btn-completed-form {
+    background: $btn-primary;
+}
