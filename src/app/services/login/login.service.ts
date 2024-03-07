@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface LoginResponse {
+  token: any;
   username: string
   password: string
 }
