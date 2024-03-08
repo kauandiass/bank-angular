@@ -7,7 +7,7 @@ import { register } from 'module';
 // import { LoginService, LoginResponse } from '../../services/login/login.service';
 import { ReferencePanelComponent } from '../reference-panel/reference-panel.component';
 import { SmallNavPageComponent } from '../small-nav-page/small-nav-page.component';
-import { response } from 'express';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { LoginResponse } from '../../services/login/login.service';
 
@@ -33,7 +33,7 @@ export class LoginComponent {
   
   loading = signal(false);
 
-  constructor(private loginFormGroup: FormBuilder, private authService: AuthService) {
+  constructor(private loginFormGroup: FormBuilder, private authService: AuthService, private router: Router) {
     this.loginForm = this.loginFormGroup.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -52,6 +52,9 @@ export class LoginComponent {
 
           localStorage.setItem('token', token);
           console.log("Server Response: ", response.token);
+
+          this.router.navigate(['/']);
+
         }
       });
     }
